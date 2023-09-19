@@ -11,7 +11,7 @@ def euler(f, y_init, h, t_slutt):
 f = lambda t: t
 y_exact = lambda t: (t**2)/2+1
 t, y = euler(f, 1, 0.25, 1.0)
-error = y_exact(t) - y
+error = abs(y_exact - y)
 
 headers = ["t", "euler", "error"]
 print(f"{headers[0]:<8}{headers[1]:<8} {headers[2]:<8}")
