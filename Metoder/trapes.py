@@ -12,8 +12,8 @@ def trapes(f, y_init, h, t_slutt):
         y[i] = y[i-1] + 0.5*h*(s1 + s2)
     return t, y
 
-f = lambda t, y: t
-y_exact = lambda t: 0.5*t**2 + 1
+f = lambda t, y: t**2*y
+y_exact = lambda t: np.e**(t**3/3)
 t, y = trapes(f, 1, 0.25, 1.0)
 error = abs(y_exact(t) - y)
 
